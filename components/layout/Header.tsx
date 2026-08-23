@@ -62,7 +62,7 @@ export function Header() {
               alt="TechHub Perú"
               width={229}
               height={155}
-              className={`h-auto w-auto transition-[height] duration-300 dark:hidden ${scrolled ? "h-[46px]" : "h-14"}`}
+              className={`logo-light-only h-auto w-auto transition-[height] duration-300 ${scrolled ? "h-8" : "h-9"}`}
               priority
             />
             <Image
@@ -70,7 +70,7 @@ export function Header() {
               alt="TechHub Perú"
               width={265}
               height={144}
-              className={`hidden h-auto w-auto transition-[height] duration-300 dark:block ${scrolled ? "h-[46px]" : "h-14"}`}
+              className={`logo-dark-only h-auto w-auto transition-[height] duration-300 ${scrolled ? "h-8" : "h-9"}`}
               priority
             />
           </Link>

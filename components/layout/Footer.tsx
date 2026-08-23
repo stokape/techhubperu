@@ -13,8 +13,8 @@ export function Footer() {
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-8 px-5 py-12 sm:px-8 sm:py-16 min-[561px]:grid-cols-2 min-[981px]:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div>
           <Link href="/" aria-label="TechHub Perú — inicio" className="inline-block">
-            <Image src="/images/logo/logo-light.png" alt="TechHub Perú" width={229} height={155} className="h-16 w-auto dark:hidden" />
-            <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={265} height={144} className="hidden h-16 w-auto dark:block" />
+            <Image src="/images/logo/logo-light.png" alt="TechHub Perú" width={229} height={155} className="logo-light-only h-12 w-auto" />
+            <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={265} height={144} className="logo-dark-only h-12 w-auto" />
           </Link>
           <p className="my-3.5 max-w-[26ch] text-[.9rem] text-ink-muted">{siteConfig.claim}</p>
           <div className="flex gap-2.5">

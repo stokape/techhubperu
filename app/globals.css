@@ -144,3 +144,29 @@ h1, h2, h3, h4 {
   outline: 2px solid var(--brand);
   outline-offset: 3px;
 }
+
+/* ============================================================
+   Logo claro/oscuro — sigue el mismo data-theme que el resto del
+   sitio (NO la utilidad `dark:` de Tailwind, que solo mira la
+   preferencia del sistema operativo y se desincroniza del switch).
+   ============================================================ */
+.logo-dark-only {
+  display: none;
+}
+.logo-light-only {
+  display: block;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo-light-only {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .logo-dark-only {
+    display: block;
+  }
+}
+:root[data-theme="dark"] .logo-light-only {
+  display: none;
+}
+:root[data-theme="dark"] .logo-dark-only {
+  display: block;
+}
