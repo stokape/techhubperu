@@ -40,8 +40,14 @@ export function ContactForm() {
     if (validate(fields)) setStep(to);
   }
 
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const botcheck = new FormData(e.currentTarget).get("botcheck");
+    if (botcheck) {
+      // Un bot rellenó el campo trampa: se simula éxito sin enviar nada.
+      setDone(true);
+      return;
+    }
     const okBasics = validate(["fName", "fEmail", "fPhone"]);
     const okProgram = validate(["fProgram"]);
     if (!okBasics || !okProgram || !consent) {
@@ -94,6 +100,8 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="rounded-2xl border border-border bg-surface p-[clamp(24px,4vw,36px)] shadow-[var(--shadow-md)]">
+      {/* honeypot: campo invisible para humanos, los bots suelen rellenar todo */}
+      <input type="text" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute left-[-9999px] h-px w-px opacity-0" />
       <div className="mb-7 flex items-start">
         {[1, 2, 3].map((n, i) => (
           <div key={n} className="flex flex-1 items-center last:flex-none">

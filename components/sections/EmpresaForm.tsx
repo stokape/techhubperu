@@ -41,8 +41,14 @@ export function EmpresaForm() {
     return ok;
   }
 
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const botcheck = new FormData(e.currentTarget).get("botcheck");
+    if (botcheck) {
+      // Un bot rellenó el campo trampa: se simula éxito sin enviar nada.
+      setDone(true);
+      return;
+    }
     if (!validate() || !consent) {
       setStatus({ kind: "err", text: "Revisa los campos marcados antes de continuar." });
       return;
@@ -84,6 +90,8 @@ export function EmpresaForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-[clamp(24px,4vw,36px)] shadow-[var(--shadow-md)]">
+      {/* honeypot: campo invisible para humanos, los bots suelen rellenar todo */}
+      <input type="text" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute left-[-9999px] h-px w-px opacity-0" />
       <div className="grid grid-cols-1 gap-4 min-[561px]:grid-cols-2">
         <Field label="Nombre de la empresa" error={errors.eCompany && "Ingresa el nombre de la empresa."}>
           <input value={values.eCompany} onChange={(e) => update("eCompany", e.target.value)} className={inputClass(errors.eCompany)} />
