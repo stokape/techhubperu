@@ -52,7 +52,7 @@ export function Header() {
 
       <header
         className={`sticky top-0 z-50 border-b border-border transition-[padding,background,box-shadow] duration-300 ${
-          scrolled ? "bg-header-bg py-2.5 shadow-[var(--shadow-sm)] backdrop-blur-md" : "bg-bg py-3.5"
+          scrolled ? "bg-header-bg py-3 shadow-[var(--shadow-sm)] backdrop-blur-md" : "bg-bg py-4"
         }`}
       >
         <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-5 px-5 sm:px-8">
@@ -62,7 +62,7 @@ export function Header() {
               alt="TechHub Perú"
               width={229}
               height={155}
-              className={`logo-light-only w-auto shrink-0 transition-[height] duration-300 ${scrolled ? "h-8" : "h-9"}`}
+              className={`logo-light-only w-auto shrink-0 transition-[height] duration-300 ${scrolled ? "h-[37px]" : "h-[41px]"}`}
               priority
             />
             <Image
@@ -70,7 +70,7 @@ export function Header() {
               alt="TechHub Perú"
               width={265}
               height={144}
-              className={`logo-dark-only w-auto shrink-0 transition-[height] duration-300 ${scrolled ? "h-8" : "h-9"}`}
+              className={`logo-dark-only w-auto shrink-0 transition-[height] duration-300 ${scrolled ? "h-[37px]" : "h-[41px]"}`}
               priority
             />
           </Link>
@@ -93,13 +93,13 @@ export function Header() {
               href={siteConfig.lms.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden h-9 items-center rounded-lg border border-border-strong px-4 text-[.78rem] font-bold uppercase tracking-wide text-ink transition-colors hover:border-brand min-[621px]:inline-flex"
+              className="hidden h-[41px] items-center rounded-lg border border-border-strong px-[18px] text-[.86rem] font-bold uppercase tracking-wide text-ink transition-colors hover:border-brand min-[621px]:inline-flex"
             >
               {siteConfig.lms.label}
             </a>
             <Link
               href="/#registro"
-              className="inline-flex h-9 items-center justify-center rounded-lg bg-brand px-4 text-[.78rem] font-bold uppercase tracking-wide text-on-brand transition-colors hover:bg-navy-2"
+              className="inline-flex h-[41px] items-center justify-center rounded-lg bg-brand px-[18px] text-[.86rem] font-bold uppercase tracking-wide text-on-brand transition-colors hover:bg-navy-2"
             >
               Inscríbete
             </Link>
@@ -107,9 +107,9 @@ export function Header() {
               onClick={() => setMobileOpen(true)}
               aria-label="Abrir menú"
               aria-expanded={mobileOpen}
-              className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-ink-muted lg:hidden"
+              className="flex h-[41px] w-[41px] items-center justify-center rounded-lg border border-border text-ink-muted lg:hidden"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="h-[18px] w-[18px]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="h-5 w-5">
                 <path d="M4 7h16M4 12h16M4 17h16" />
               </svg>
             </button>
