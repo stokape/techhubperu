@@ -83,15 +83,8 @@ export function Footer() {
         ))}
       </div>
 
-      <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-3 px-5 py-4 text-[.78rem] text-ink-faint sm:px-8">
+      <div className="mx-auto max-w-[1280px] px-5 py-4 text-[.78rem] text-ink-faint sm:px-8">
         <span>© {new Date().getFullYear()} TechHub Perú. Todos los derechos reservados.</span>
-        <div className="flex flex-wrap gap-5">
-          <Link href={siteConfig.legal.privacyUrl} className="hover:text-ink">Política de privacidad</Link>
-          <Link href={siteConfig.legal.termsUrl} className="hover:text-ink">Términos y condiciones</Link>
-          {siteConfig.legal.complaintsBookUrl && (
-            <a href={siteConfig.legal.complaintsBookUrl} className="hover:text-ink">Libro de reclamaciones</a>
-          )}
-        </div>
       </div>
     </footer>
   );
