@@ -30,7 +30,7 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="Cambiar tema claro / oscuro"
-      className="flex h-9 w-9 flex-none items-center justify-center rounded-lg border border-border text-ink-muted transition-colors hover:border-border-strong hover:bg-surface-2 hover:text-ink"
+      className="flex h-10 w-10 flex-none items-center justify-center rounded-lg border border-border text-ink-muted transition-colors hover:border-border-strong hover:bg-surface-2 hover:text-ink"
     >
       {isDark ? (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className="h-[17px] w-[17px]">
