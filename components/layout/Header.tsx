@@ -62,7 +62,7 @@ export function Header() {
               alt="TechHub Perú"
               width={229}
               height={155}
-              className={`logo-light-only h-auto w-auto transition-[height] duration-300 ${scrolled ? "h-7" : "h-8"}`}
+              className={`logo-light-only h-auto w-auto transition-[height] duration-300 ${scrolled ? "h-4" : "h-5"}`}
               priority
             />
             <Image
@@ -70,7 +70,7 @@ export function Header() {
               alt="TechHub Perú"
               width={265}
               height={144}
-              className={`logo-dark-only h-auto w-auto transition-[height] duration-300 ${scrolled ? "h-7" : "h-8"}`}
+              className={`logo-dark-only h-auto w-auto transition-[height] duration-300 ${scrolled ? "h-4" : "h-5"}`}
               priority
             />
           </Link>
@@ -93,13 +93,13 @@ export function Header() {
               href={siteConfig.lms.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden h-8 items-center rounded-lg border border-border-strong px-3.5 text-[.72rem] font-bold uppercase tracking-wide text-ink transition-colors hover:border-brand min-[621px]:inline-flex"
+              className="hidden h-6 items-center rounded-md border border-border-strong px-2.5 text-[.65rem] font-bold uppercase tracking-wide text-ink transition-colors hover:border-brand min-[621px]:inline-flex"
             >
               {siteConfig.lms.label}
             </a>
             <Link
               href="/#registro"
-              className="inline-flex h-8 items-center justify-center rounded-lg bg-brand px-3.5 text-[.72rem] font-bold uppercase tracking-wide text-on-brand transition-colors hover:bg-navy-2"
+              className="inline-flex h-6 items-center justify-center rounded-md bg-brand px-2.5 text-[.65rem] font-bold uppercase tracking-wide text-on-brand transition-colors hover:bg-navy-2"
             >
               Inscríbete
             </Link>
@@ -107,9 +107,9 @@ export function Header() {
               onClick={() => setMobileOpen(true)}
               aria-label="Abrir menú"
               aria-expanded={mobileOpen}
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-ink-muted lg:hidden"
+              className="flex h-6 w-6 items-center justify-center rounded-md border border-border text-ink-muted lg:hidden"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="h-[18px] w-[18px]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="h-3.5 w-3.5">
                 <path d="M4 7h16M4 12h16M4 17h16" />
               </svg>
             </button>
