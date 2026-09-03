@@ -2,19 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { programs, siteConfig } from "@/lib/site.config";
 
-const strandColors = [
-  "#2A5BD7", "#E8650F", "#149A52", "#8B5A2B", "#8A93A6", "#F5F5F0",
-  "#D62828", "#14161C", "#C99400", "#7C4DDA", "#E85D9E", "#0FA9B8",
-];
-
 export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-8 px-5 py-12 sm:px-8 sm:py-16 min-[561px]:grid-cols-2 min-[981px]:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div>
           <Link href="/" aria-label="TechHub Perú — inicio" className="inline-block">
-            <Image src="/images/logo/logo-light.png" alt="TechHub Perú" width={229} height={155} className="logo-light-only h-12 w-auto" />
-            <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={265} height={144} className="logo-dark-only h-12 w-auto" />
+            <Image src="/images/logo/logo-light.png" alt="TechHub Perú" width={229} height={155} className="logo-light-only h-[62px] w-auto" />
+            <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={265} height={144} className="logo-dark-only h-[62px] w-auto" />
           </Link>
           <p className="my-3.5 max-w-[26ch] text-[.9rem] text-ink-muted">{siteConfig.claim}</p>
           <div className="flex gap-2.5">
@@ -74,12 +69,6 @@ export function Footer() {
             <span className="text-[.87rem] text-ink-muted">{siteConfig.contact.address}</span>
           )}
         </FooterCol>
-      </div>
-
-      <div className="flex h-1.5">
-        {strandColors.map((c) => (
-          <i key={c} className="flex-1" style={{ background: c }} />
-        ))}
       </div>
 
       <div className="mx-auto max-w-[1280px] px-5 py-4 text-[.78rem] text-ink-faint sm:px-8">

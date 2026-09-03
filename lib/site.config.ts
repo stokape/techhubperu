@@ -177,7 +177,7 @@ export const programs: Program[] = [
     subtitle: "Fortalece tu dominio técnico en servicios de telecomunicaciones",
     description:
       "Integra tus conocimientos de instalación, configuración, medición y diagnóstico para atender servicios de telecomunicaciones dentro del hogar. Desarrolla tu capacidad para resolver problemas y demostrar tus competencias mediante actividades prácticas.",
-    duration: null, // por confirmar
+    duration: "95 horas",
     audienceIntro:
       "Este programa está dirigido a técnicos con formación o experiencia en telecomunicaciones que buscan consolidar sus habilidades y demostrar un mayor dominio de los servicios In House.",
     audience: [
