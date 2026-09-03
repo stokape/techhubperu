@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site.config";
+import { programs, siteConfig } from "@/lib/site.config";
 
 const strandColors = [
   "#2A5BD7", "#E8650F", "#149A52", "#8B5A2B", "#8A93A6", "#F5F5F0",
@@ -52,11 +52,10 @@ export function Footer() {
           <FooterLink href="/jobs">TechHub Jobs</FooterLink>
         </FooterCol>
 
-        <FooterCol title="Cursos">
-          <FooterLink href="/#cursos">HFC Básico / Avanzado</FooterLink>
-          <FooterLink href="/#cursos">FTTH Básico / Avanzado</FooterLink>
-          <FooterLink href="/#cursos">SSOMA para Telecomunicaciones</FooterLink>
-          <FooterLink href="/#cursos">Trabajo Seguro en Altura</FooterLink>
+        <FooterCol title="Programas">
+          {programs.map((p) => (
+            <FooterLink key={p.slug} href="/#programas">{p.title}</FooterLink>
+          ))}
         </FooterCol>
 
         <FooterCol title="Empresas">

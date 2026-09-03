@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { courses, siteConfig } from "@/lib/site.config";
+import { programs, siteConfig } from "@/lib/site.config";
 
 type Step = 1 | 2 | 3;
 type Status = { kind: "ok" | "err"; text: string } | null;
@@ -142,7 +142,7 @@ export function ContactForm() {
           <Field label="Programa de interés" error={errors.fProgram && "Selecciona un programa."}>
             <select value={values.fProgram} onChange={(e) => update("fProgram", e.target.value)} className={inputClass(errors.fProgram)}>
               <option value="">Selecciona un programa</option>
-              {courses.map((c) => <option key={c.slug}>{c.title}</option>)}
+              {programs.map((p) => <option key={p.slug}>{p.title}</option>)}
               <option>Aún no lo sé — quiero orientación</option>
             </select>
           </Field>
