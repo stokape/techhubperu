@@ -51,8 +51,8 @@ export function Header() {
       </div>
 
       <header
-        className={`sticky top-0 z-50 border-b border-border transition-[padding,background,box-shadow] duration-300 ${
-          scrolled ? "bg-header-bg py-3 shadow-[var(--shadow-sm)] backdrop-blur-md" : "bg-bg py-4"
+        className={`sticky top-0 z-50 border-b border-border bg-bg transition-[padding,box-shadow] duration-300 ${
+          scrolled ? "py-3 shadow-[var(--shadow-sm)]" : "py-4"
         }`}
       >
         <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-5 px-5 sm:px-8">
