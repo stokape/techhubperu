@@ -26,7 +26,7 @@ export function MobileNav({ open, onClose }: Props) {
     >
       <div className="mb-8 flex items-center justify-between">
         <Image src="/images/logo/logo-light.png" alt="TechHub Perú" width={229} height={155} className="logo-light-only h-9 w-auto" />
-        <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={265} height={144} className="logo-dark-only h-9 w-auto" />
+        <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={217} height={144} className="logo-dark-only h-9 w-auto" />
         <button onClick={onClose} aria-label="Cerrar menú" className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-ink-muted">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="h-[18px] w-[18px]">
             <path d="M6 6l12 12M18 6L6 18" />

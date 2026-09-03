@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <Link href="/" aria-label="TechHub Perú — inicio" className="inline-block">
             <Image src="/images/logo/logo-light.png" alt="TechHub Perú" width={229} height={155} className="logo-light-only h-[62px] w-auto" />
-            <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={265} height={144} className="logo-dark-only h-[62px] w-auto" />
+            <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={217} height={144} className="logo-dark-only h-[62px] w-auto" />
           </Link>
           <p className="my-3.5 max-w-[26ch] text-[.9rem] text-ink-muted">{siteConfig.claim}</p>
           <div className="flex gap-2.5">

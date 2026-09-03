@@ -68,7 +68,7 @@ export function Header() {
             <Image
               src="/images/logo/logo-dark.png"
               alt="TechHub Perú"
-              width={265}
+              width={217}
               height={144}
               className={`logo-dark-only w-auto shrink-0 transition-[height] duration-300 ${scrolled ? "h-[37px]" : "h-[41px]"}`}
               priority
