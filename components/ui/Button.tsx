@@ -8,6 +8,8 @@ type CommonProps = {
   variant?: ButtonVariant;
   className?: string;
   icon?: ReactNode;
+  /** Id estable para tagging/analítica (data-el) — ver docs/ELEMENTS.md. */
+  dataEl?: string;
 };
 
 type ButtonAsLink = CommonProps & {
@@ -24,12 +26,12 @@ const variantClasses: Record<ButtonVariant, string> = {
 const base =
   "inline-flex items-center justify-center gap-2 rounded-lg px-7 py-3.5 font-body font-bold text-[.86rem] tracking-wide uppercase whitespace-nowrap transition-colors duration-200";
 
-export function Button({ href, external, children, variant = "primary", className = "", icon }: ButtonAsLink) {
+export function Button({ href, external, children, variant = "primary", className = "", icon, dataEl }: ButtonAsLink) {
   const classes = `${base} ${variantClasses[variant]} ${className}`;
 
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+      <a data-el={dataEl} href={href} target="_blank" rel="noopener noreferrer" className={classes}>
         {children}
         {icon}
       </a>
@@ -37,7 +39,7 @@ export function Button({ href, external, children, variant = "primary", classNam
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link data-el={dataEl} href={href} className={classes}>
       {children}
       {icon}
     </Link>

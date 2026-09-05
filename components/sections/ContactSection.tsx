@@ -2,7 +2,7 @@ import { ContactForm } from "./ContactForm";
 
 export function ContactSection() {
   return (
-    <section id="registro" className="bg-bg-soft py-[clamp(60px,8vw,112px)]">
+    <section id="registro" data-el="home.contact.section" className="bg-bg-soft py-[clamp(60px,8vw,112px)]">
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-start gap-[clamp(28px,4vw,56px)] px-5 sm:px-8 min-[901px]:grid-cols-[0.9fr_1.1fr]">
         <div>
           <span className="font-mono-th text-[.72rem] font-medium uppercase tracking-[.14em] text-brand">

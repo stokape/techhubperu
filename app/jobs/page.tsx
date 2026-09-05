@@ -37,8 +37,8 @@ export default function JobsPage() {
               El ecosistema que impulsa tu talento y tu futuro en telecomunicaciones.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button href="#perfil" variant="primary">Quiero capacitarme</Button>
-              <Button href="#vacante" variant="ghost-invert">Soy empresa</Button>
+              <Button dataEl="jobs.hero.cta.capacitarme" href="#perfil" variant="primary">Quiero capacitarme</Button>
+              <Button dataEl="jobs.hero.cta.empresa" href="#vacante" variant="ghost-invert">Soy empresa</Button>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function JobsPage() {
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
           <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface min-[821px]:flex-row">
             {steps.map((s, i) => (
-              <div key={s.n} className={`relative flex-1 p-5 ${i < steps.length - 1 ? "border-b border-border min-[821px]:border-b-0 min-[821px]:border-r" : ""}`}>
+              <div key={s.n} data-el={`jobs.steps.step.${i}`} className={`relative flex-1 p-5 ${i < steps.length - 1 ? "border-b border-border min-[821px]:border-b-0 min-[821px]:border-r" : ""}`}>
                 <span className="font-mono-th text-[.7rem] tracking-[.06em] text-brand">{s.n}</span>
                 <h4 className="my-2 text-[.98rem] font-bold">{s.title}</h4>
                 <p className="text-[.82rem] text-ink-muted">{s.desc}</p>
@@ -66,7 +66,7 @@ export default function JobsPage() {
             <p className="mt-3.5 text-ink-muted">Conectamos talento certificado con empresas que necesitan cubrir vacantes técnicas.</p>
           </div>
           <div className="grid grid-cols-1 items-start gap-[clamp(24px,4vw,48px)] min-[821px]:grid-cols-2">
-            <div id="perfil" className="rounded-3xl border border-border bg-surface p-[clamp(26px,4vw,36px)] shadow-[var(--shadow-sm)]">
+            <div id="perfil" data-el="jobs.perfil.section" className="rounded-3xl border border-border bg-surface p-[clamp(26px,4vw,36px)] shadow-[var(--shadow-sm)]">
               <h3 className="mb-5 text-[1.3rem] font-bold text-brand">Para estudiantes y técnicos</h3>
               <ul className="mb-6 flex flex-col gap-3">
                 {["Perfil profesional verificado", "Acceso a alertas laborales", "Visibilidad ante empresas del sector", "Crecimiento profesional continuo"].map((i) => (
@@ -76,9 +76,9 @@ export default function JobsPage() {
                   </li>
                 ))}
               </ul>
-              <Button href="/#registro" variant="primary" className="w-full">Crear mi perfil</Button>
+              <Button dataEl="jobs.perfil.cta" href="/#registro" variant="primary" className="w-full">Crear mi perfil</Button>
             </div>
-            <div id="vacante" className="rounded-3xl border border-border bg-surface p-[clamp(26px,4vw,36px)] shadow-[var(--shadow-sm)]">
+            <div id="vacante" data-el="jobs.vacante.section" className="rounded-3xl border border-border bg-surface p-[clamp(26px,4vw,36px)] shadow-[var(--shadow-sm)]">
               <h3 className="mb-5 text-[1.3rem] font-bold text-brand">Para empresas</h3>
               <ul className="mb-6 flex flex-col gap-3">
                 {["Publica tus vacantes técnicas", "Encuentra talento certificado", "Evaluación de competencias incluida", "Reducción de tiempos de selección"].map((i) => (
@@ -88,16 +88,16 @@ export default function JobsPage() {
                   </li>
                 ))}
               </ul>
-              <Button href="/empresas#registro-empresa" variant="outline" className="w-full">Publicar vacante</Button>
+              <Button dataEl="jobs.vacante.cta" href="/empresas#registro-empresa" variant="outline" className="w-full">Publicar vacante</Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-navy text-white">
+      <section data-el="jobs.stats.section" className="bg-navy text-white">
         <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-5 px-5 py-[clamp(60px,8vw,112px)] text-center sm:px-8 min-[701px]:grid-cols-4">
-          {jobsStats.map((s) => (
-            <div key={s.label}>
+          {jobsStats.map((s, i) => (
+            <div key={s.label} data-el={`jobs.stats.stat.${i}`}>
               <div className="font-display text-[clamp(2rem,1.5rem+1.6vw,2.9rem)] font-black text-white">{s.value}</div>
               <div className="mt-2 font-mono-th text-[.7rem] uppercase tracking-[.05em] text-white/72">{s.label}</div>
             </div>

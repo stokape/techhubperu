@@ -34,15 +34,15 @@ export default function EmpresasPage() {
               Programas a medida para operadores, contratistas y empresas que necesitan desarrollar,
               actualizar o estandarizar las competencias de sus equipos técnicos.
             </p>
-            <Button href="/empresas#registro-empresa" variant="primary">Solicitar propuesta</Button>
+            <Button dataEl="empresas.hero.cta.propuesta" href="/empresas#registro-empresa" variant="primary">Solicitar propuesta</Button>
           </div>
         </div>
       </section>
 
-      <section className="bg-navy text-white">
+      <section data-el="empresas.stats.section" className="bg-navy text-white">
         <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-5 px-5 py-[clamp(60px,8vw,112px)] text-center sm:px-8 min-[701px]:grid-cols-4">
-          {empresaStats.map((s) => (
-            <div key={s.label}>
+          {empresaStats.map((s, i) => (
+            <div key={s.label} data-el={`empresas.stats.stat.${i}`}>
               <div className="font-display text-[clamp(2rem,1.5rem+1.6vw,2.9rem)] font-black text-white">{s.value}</div>
               <div className="mt-2 font-mono-th text-[.7rem] uppercase tracking-[.05em] text-white/72">{s.label}</div>
             </div>
@@ -50,7 +50,7 @@ export default function EmpresasPage() {
         </div>
       </section>
 
-      <section className="py-[clamp(60px,8vw,112px)]">
+      <section data-el="empresas.solutions.section" className="py-[clamp(60px,8vw,112px)]">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
           <div className="mx-auto mb-[clamp(34px,5vw,52px)] max-w-[680px] text-center">
             <span className="font-mono-th text-[.72rem] font-medium uppercase tracking-[.14em] text-brand">Soluciones</span>
@@ -58,8 +58,8 @@ export default function EmpresasPage() {
             <p className="mt-3.5 text-ink-muted">Programas adaptables al modelo de sus operaciones.</p>
           </div>
           <div className="grid grid-cols-1 gap-[22px] min-[621px]:grid-cols-2 min-[981px]:grid-cols-3">
-            {empresaSolutions.map((s) => (
-              <div key={s.title} className="rounded-2xl border border-border bg-surface p-6 transition-[transform,box-shadow,border-color] duration-250 hover:-translate-y-1 hover:border-border-strong hover:shadow-[var(--shadow-md)]">
+            {empresaSolutions.map((s, i) => (
+              <div key={s.title} data-el={`empresas.solutions.card.${i}`} className="rounded-2xl border border-border bg-surface p-6 transition-[transform,box-shadow,border-color] duration-250 hover:-translate-y-1 hover:border-border-strong hover:shadow-[var(--shadow-md)]">
                 <h3 className="mb-2 text-[1.05rem] font-bold">{s.title}</h3>
                 <p className="text-[.88rem] text-ink-muted">{s.description}</p>
               </div>
@@ -68,7 +68,7 @@ export default function EmpresasPage() {
         </div>
       </section>
 
-      <section id="registro-empresa" className="bg-[linear-gradient(120deg,var(--navy)_0%,var(--navy-2)_100%)] py-[clamp(60px,8vw,112px)] text-white">
+      <section id="registro-empresa" data-el="empresas.form.section" className="bg-[linear-gradient(120deg,var(--navy)_0%,var(--navy-2)_100%)] py-[clamp(60px,8vw,112px)] text-white">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-start gap-[clamp(28px,4vw,56px)] px-5 sm:px-8 min-[901px]:grid-cols-[0.9fr_1.1fr]">
           <div>
             <span className="font-mono-th text-[.72rem] font-medium uppercase tracking-[.14em] text-accent-2">Empieza ahora</span>

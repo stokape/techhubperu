@@ -24,8 +24,8 @@ export function Hero() {
             Formación especializada, práctica y certificada para impulsar tu carrera en el sector de telecomunicaciones.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Button href="/#programas" variant="primary">Ver programas</Button>
-            <Button href="/#registro" variant="ghost-invert">Solicitar información</Button>
+            <Button dataEl="home.hero.cta.programas" href="/#programas" variant="primary">Ver programas</Button>
+            <Button dataEl="home.hero.cta.registro" href="/#registro" variant="ghost-invert">Solicitar información</Button>
           </div>
         </div>
       </div>

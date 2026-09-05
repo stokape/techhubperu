@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <section id="nosotros" className="py-[clamp(60px,8vw,112px)]">
+    <section id="nosotros" data-el="home.about.section" className="py-[clamp(60px,8vw,112px)]">
       <div className="mx-auto max-w-[760px] px-5 text-center sm:px-8">
         <span className="font-mono-th text-[.72rem] font-medium uppercase tracking-[.14em] text-brand">
           Quiénes somos

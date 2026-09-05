@@ -7,9 +7,11 @@ type ModalProps = {
   onClose: () => void;
   labelledBy: string;
   children: React.ReactNode;
+  /** Id estable para tagging/analítica (data-el) — ver docs/ELEMENTS.md. */
+  dataEl?: string;
 };
 
-export function Modal({ open, onClose, labelledBy, children }: ModalProps) {
+export function Modal({ open, onClose, labelledBy, children, dataEl }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
 
@@ -68,10 +70,12 @@ export function Modal({ open, onClose, labelledBy, children }: ModalProps) {
         aria-modal="true"
         aria-labelledby={labelledBy}
         tabIndex={-1}
+        data-el={dataEl}
         className="relative z-[1] max-h-[88vh] w-full max-w-[720px] overflow-y-auto rounded-2xl border border-border bg-surface shadow-[var(--shadow-lg)] outline-none animate-[modal-in_.18s_ease-out]"
       >
         <button
           type="button"
+          data-el={dataEl ? `${dataEl}.close` : undefined}
           onClick={onClose}
           aria-label="Cerrar"
           className="sticky top-3 z-[2] float-right mr-3 flex h-9 w-9 flex-none items-center justify-center rounded-full border border-border bg-surface text-ink-muted transition-colors hover:border-brand hover:text-brand"

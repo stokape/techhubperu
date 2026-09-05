@@ -3,7 +3,7 @@ import { features } from "@/lib/site.config";
 
 export function FeatureGrid() {
   return (
-    <section aria-label="Diferenciales" className="py-[clamp(60px,8vw,112px)]">
+    <section data-el="home.features.section" aria-label="Diferenciales" className="py-[clamp(60px,8vw,112px)]">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
         <div className="mb-[clamp(34px,5vw,52px)] max-w-[680px]">
           <span className="font-mono-th text-[.72rem] font-medium uppercase tracking-[.14em] text-brand">
@@ -18,6 +18,7 @@ export function FeatureGrid() {
           {features.map((feature, i) => (
             <article
               key={feature.slug}
+              data-el={`home.features.card.${feature.slug}`}
               className="overflow-hidden rounded-2xl border border-border bg-surface transition-[transform,box-shadow,border-color] duration-250 hover:-translate-y-1 hover:border-border-strong hover:shadow-[var(--shadow-md)]"
             >
               <div className="relative aspect-[4/3]">

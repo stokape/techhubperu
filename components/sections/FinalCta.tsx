@@ -14,8 +14,8 @@ export function FinalCta() {
           Desarrolla las competencias que demanda una industria cada vez más conectada.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Button href="/#programas" variant="primary">Explorar programas</Button>
-          <Button href="/#registro" variant="ghost-invert">Hablar con TechHub</Button>
+          <Button dataEl="home.finalcta.cta.programas" href="/#programas" variant="primary">Explorar programas</Button>
+          <Button dataEl="home.finalcta.cta.registro" href="/#registro" variant="ghost-invert">Hablar con TechHub</Button>
         </div>
       </div>
     </section>

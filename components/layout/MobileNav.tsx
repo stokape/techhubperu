@@ -25,9 +25,9 @@ export function MobileNav({ open, onClose }: Props) {
       }`}
     >
       <div className="mb-8 flex items-center justify-between">
-        <Image src="/images/logo/logo-light.png" alt="TechHub Perú" width={229} height={155} className="logo-light-only h-9 w-auto" />
-        <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={217} height={144} className="logo-dark-only h-9 w-auto" />
-        <button onClick={onClose} aria-label="Cerrar menú" className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-ink-muted">
+        <Image data-el="mobilenav.logo" src="/images/logo/logo-light.png" alt="TechHub Perú" width={229} height={155} className="logo-light-only h-9 w-auto" />
+        <Image data-el="mobilenav.logo" src="/images/logo/logo-dark.png" alt="TechHub Perú" width={217} height={144} className="logo-dark-only h-9 w-auto" />
+        <button data-el="mobilenav.close" onClick={onClose} aria-label="Cerrar menú" className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-ink-muted">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="h-[18px] w-[18px]">
             <path d="M6 6l12 12M18 6L6 18" />
           </svg>
@@ -38,6 +38,7 @@ export function MobileNav({ open, onClose }: Props) {
         {siteConfig.nav.map((item) => (
           <Link
             key={item.href}
+            data-el={`mobilenav.nav.${item.slug}`}
             href={item.href}
             onClick={onClose}
             className="block border-b border-border py-3.5 font-display text-2xl font-extrabold uppercase text-ink"
@@ -48,6 +49,7 @@ export function MobileNav({ open, onClose }: Props) {
       </nav>
 
       <a
+        data-el="mobilenav.cta.aula-virtual"
         href={siteConfig.lms.url}
         target="_blank"
         rel="noopener noreferrer"
@@ -56,6 +58,7 @@ export function MobileNav({ open, onClose }: Props) {
         {siteConfig.lms.label}
       </a>
       <Link
+        data-el="mobilenav.cta.inscribete"
         href="/#registro"
         onClick={onClose}
         className="mt-3 block w-full rounded-lg bg-brand px-6 py-3.5 text-center text-[.86rem] font-bold uppercase tracking-wide text-on-brand"

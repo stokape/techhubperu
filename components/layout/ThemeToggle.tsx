@@ -28,6 +28,7 @@ export function ThemeToggle() {
 
   return (
     <button
+      data-el="header.theme-toggle"
       onClick={toggle}
       aria-label="Cambiar tema claro / oscuro"
       className="flex h-[41px] w-[41px] flex-none items-center justify-center rounded-lg border border-border text-ink-muted transition-colors hover:border-border-strong hover:bg-surface-2 hover:text-ink"

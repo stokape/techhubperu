@@ -99,7 +99,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="rounded-2xl border border-border bg-surface p-[clamp(24px,4vw,36px)] shadow-[var(--shadow-md)]">
+    <form data-el="home.contact.form" onSubmit={handleSubmit} noValidate className="rounded-2xl border border-border bg-surface p-[clamp(24px,4vw,36px)] shadow-[var(--shadow-md)]">
       {/* honeypot: campo invisible para humanos, los bots suelen rellenar todo */}
       <input type="text" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute left-[-9999px] h-px w-px opacity-0" />
       <div className="mb-7 flex items-start">
@@ -123,15 +123,15 @@ export function ContactForm() {
       {step === 1 && (
         <div className="flex flex-col gap-4">
           <Field label="Nombre y apellidos" error={errors.fName && "Ingresa tu nombre completo."}>
-            <input value={values.fName} onChange={(e) => update("fName", e.target.value)} type="text" autoComplete="name" className={inputClass(errors.fName)} />
+            <input data-el="home.contact.form.field.name" value={values.fName} onChange={(e) => update("fName", e.target.value)} type="text" autoComplete="name" className={inputClass(errors.fName)} />
           </Field>
           <Field label="Correo electrónico" error={errors.fEmail && "Ingresa un correo válido."}>
-            <input value={values.fEmail} onChange={(e) => update("fEmail", e.target.value)} type="email" autoComplete="email" className={inputClass(errors.fEmail)} />
+            <input data-el="home.contact.form.field.email" value={values.fEmail} onChange={(e) => update("fEmail", e.target.value)} type="email" autoComplete="email" className={inputClass(errors.fEmail)} />
           </Field>
           <Field label="Teléfono / WhatsApp" error={errors.fPhone && "Ingresa un teléfono válido."}>
-            <input value={values.fPhone} onChange={(e) => update("fPhone", e.target.value)} type="tel" autoComplete="tel" className={inputClass(errors.fPhone)} />
+            <input data-el="home.contact.form.field.phone" value={values.fPhone} onChange={(e) => update("fPhone", e.target.value)} type="tel" autoComplete="tel" className={inputClass(errors.fPhone)} />
           </Field>
-          <button type="button" onClick={() => next(["fName", "fEmail", "fPhone"], 2)} className="w-full rounded-lg bg-brand py-3.5 text-[.86rem] font-bold uppercase tracking-wide text-on-brand hover:bg-navy-2">
+          <button data-el="home.contact.form.step1.continue" type="button" onClick={() => next(["fName", "fEmail", "fPhone"], 2)} className="w-full rounded-lg bg-brand py-3.5 text-[.86rem] font-bold uppercase tracking-wide text-on-brand hover:bg-navy-2">
             Continuar
           </button>
         </div>
@@ -140,20 +140,20 @@ export function ContactForm() {
       {step === 2 && (
         <div className="flex flex-col gap-4">
           <Field label="Programa de interés" error={errors.fProgram && "Selecciona un programa."}>
-            <select value={values.fProgram} onChange={(e) => update("fProgram", e.target.value)} className={inputClass(errors.fProgram)}>
+            <select data-el="home.contact.form.field.program" value={values.fProgram} onChange={(e) => update("fProgram", e.target.value)} className={inputClass(errors.fProgram)}>
               <option value="">Selecciona un programa</option>
               {programs.map((p) => <option key={p.slug}>{p.title}</option>)}
               <option>Aún no lo sé — quiero orientación</option>
             </select>
           </Field>
           <Field label="Empresa (opcional)">
-            <input value={values.fCompany} onChange={(e) => update("fCompany", e.target.value)} type="text" className={inputClass(false)} />
+            <input data-el="home.contact.form.field.company" value={values.fCompany} onChange={(e) => update("fCompany", e.target.value)} type="text" className={inputClass(false)} />
           </Field>
           <div className="flex gap-3">
-            <button type="button" onClick={() => setStep(1)} className="flex-1 rounded-lg border border-border-strong py-3.5 text-[.86rem] font-bold uppercase tracking-wide hover:border-brand">
+            <button data-el="home.contact.form.step2.back" type="button" onClick={() => setStep(1)} className="flex-1 rounded-lg border border-border-strong py-3.5 text-[.86rem] font-bold uppercase tracking-wide hover:border-brand">
               Atrás
             </button>
-            <button type="button" onClick={() => next(["fProgram"], 3)} className="flex-1 rounded-lg bg-brand py-3.5 text-[.86rem] font-bold uppercase tracking-wide text-on-brand hover:bg-navy-2">
+            <button data-el="home.contact.form.step2.continue" type="button" onClick={() => next(["fProgram"], 3)} className="flex-1 rounded-lg bg-brand py-3.5 text-[.86rem] font-bold uppercase tracking-wide text-on-brand hover:bg-navy-2">
               Continuar
             </button>
           </div>
@@ -163,7 +163,7 @@ export function ContactForm() {
       {step === 3 && (
         <div className="flex flex-col gap-4">
           <Field label="Mensaje (opcional)">
-            <textarea value={values.fMsg} onChange={(e) => update("fMsg", e.target.value)} rows={3} className={inputClass(false)} />
+            <textarea data-el="home.contact.form.field.message" value={values.fMsg} onChange={(e) => update("fMsg", e.target.value)} rows={3} className={inputClass(false)} />
           </Field>
 
           <div className="flex flex-col gap-2 rounded-lg border border-border bg-bg-soft p-4">
@@ -180,10 +180,10 @@ export function ContactForm() {
           </label>
 
           <div className="flex gap-3">
-            <button type="button" onClick={() => setStep(2)} className="flex-1 rounded-lg border border-border-strong py-3.5 text-[.86rem] font-bold uppercase tracking-wide hover:border-brand">
+            <button data-el="home.contact.form.step3.back" type="button" onClick={() => setStep(2)} className="flex-1 rounded-lg border border-border-strong py-3.5 text-[.86rem] font-bold uppercase tracking-wide hover:border-brand">
               Atrás
             </button>
-            <button type="submit" disabled={sending} className="flex-1 rounded-lg bg-brand py-3.5 text-[.86rem] font-bold uppercase tracking-wide text-on-brand hover:bg-navy-2 disabled:opacity-60">
+            <button data-el="home.contact.form.submit" type="submit" disabled={sending} className="flex-1 rounded-lg bg-brand py-3.5 text-[.86rem] font-bold uppercase tracking-wide text-on-brand hover:bg-navy-2 disabled:opacity-60">
               {sending ? "Enviando…" : "Enviar solicitud"}
             </button>
           </div>

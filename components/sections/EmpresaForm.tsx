@@ -89,47 +89,47 @@ export function EmpresaForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-[clamp(24px,4vw,36px)] shadow-[var(--shadow-md)]">
+    <form data-el="empresas.form" onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-[clamp(24px,4vw,36px)] shadow-[var(--shadow-md)]">
       {/* honeypot: campo invisible para humanos, los bots suelen rellenar todo */}
       <input type="text" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute left-[-9999px] h-px w-px opacity-0" />
       <div className="grid grid-cols-1 gap-4 min-[561px]:grid-cols-2">
         <Field label="Nombre de la empresa" error={errors.eCompany && "Ingresa el nombre de la empresa."}>
-          <input value={values.eCompany} onChange={(e) => update("eCompany", e.target.value)} className={inputClass(errors.eCompany)} />
+          <input data-el="empresas.form.field.company" value={values.eCompany} onChange={(e) => update("eCompany", e.target.value)} className={inputClass(errors.eCompany)} />
         </Field>
         <Field label="Persona de contacto" error={errors.eContact && "Ingresa un nombre de contacto."}>
-          <input value={values.eContact} onChange={(e) => update("eContact", e.target.value)} className={inputClass(errors.eContact)} />
+          <input data-el="empresas.form.field.contact" value={values.eContact} onChange={(e) => update("eContact", e.target.value)} className={inputClass(errors.eContact)} />
         </Field>
       </div>
       <div className="grid grid-cols-1 gap-4 min-[561px]:grid-cols-2">
         <Field label="Correo corporativo" error={errors.eEmail && "Ingresa un correo válido."}>
-          <input value={values.eEmail} onChange={(e) => update("eEmail", e.target.value)} type="email" className={inputClass(errors.eEmail)} />
+          <input data-el="empresas.form.field.email" value={values.eEmail} onChange={(e) => update("eEmail", e.target.value)} type="email" className={inputClass(errors.eEmail)} />
         </Field>
         <Field label="Teléfono / WhatsApp" error={errors.ePhone && "Ingresa un teléfono válido."}>
-          <input value={values.ePhone} onChange={(e) => update("ePhone", e.target.value)} type="tel" className={inputClass(errors.ePhone)} />
+          <input data-el="empresas.form.field.phone" value={values.ePhone} onChange={(e) => update("ePhone", e.target.value)} type="tel" className={inputClass(errors.ePhone)} />
         </Field>
       </div>
       <div className="grid grid-cols-1 gap-4 min-[561px]:grid-cols-2">
         <Field label="Tipo de capacitación" error={errors.eInterest && "Selecciona una opción."}>
-          <select value={values.eInterest} onChange={(e) => update("eInterest", e.target.value)} className={inputClass(errors.eInterest)}>
+          <select data-el="empresas.form.field.interest" value={values.eInterest} onChange={(e) => update("eInterest", e.target.value)} className={inputClass(errors.eInterest)}>
             <option value="">Selecciona una opción</option>
             {interests.map((i) => <option key={i}>{i}</option>)}
           </select>
         </Field>
         <Field label="N.° aproximado de técnicos">
-          <select value={values.eTeamSize} onChange={(e) => update("eTeamSize", e.target.value)} className={inputClass(false)}>
+          <select data-el="empresas.form.field.team-size" value={values.eTeamSize} onChange={(e) => update("eTeamSize", e.target.value)} className={inputClass(false)}>
             <option value="">Selecciona un rango (opcional)</option>
             <option>1 a 10</option><option>11 a 30</option><option>31 a 50</option><option>Más de 50</option>
           </select>
         </Field>
       </div>
       <Field label="Mensaje (opcional)">
-        <textarea value={values.eMsg} onChange={(e) => update("eMsg", e.target.value)} rows={3} className={inputClass(false)} />
+        <textarea data-el="empresas.form.field.message" value={values.eMsg} onChange={(e) => update("eMsg", e.target.value)} rows={3} className={inputClass(false)} />
       </Field>
       <label className="flex items-start gap-2.5">
         <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5" />
         <span className="text-[.82rem] text-ink-muted">Acepto la política de privacidad y el tratamiento de mis datos personales.</span>
       </label>
-      <button type="submit" disabled={sending} className="w-full rounded-lg bg-brand py-3.5 text-[.86rem] font-bold uppercase tracking-wide text-on-brand hover:bg-navy-2 disabled:opacity-60">
+      <button data-el="empresas.form.submit" type="submit" disabled={sending} className="w-full rounded-lg bg-brand py-3.5 text-[.86rem] font-bold uppercase tracking-wide text-on-brand hover:bg-navy-2 disabled:opacity-60">
         {sending ? "Enviando…" : "Solicitar propuesta"}
       </button>
       {status && (

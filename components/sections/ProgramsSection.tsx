@@ -11,7 +11,7 @@ export function ProgramsSection() {
   const active = programs.find((p) => p.slug === activeSlug) ?? null;
 
   return (
-    <section id="programas" className="py-[clamp(60px,8vw,112px)]">
+    <section id="programas" data-el="home.programs.section" className="py-[clamp(60px,8vw,112px)]">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
         <div className="mb-[clamp(34px,5vw,52px)] flex items-center justify-center gap-4 text-center uppercase">
           <span className="h-2 w-2 flex-none rounded-full border-[1.5px] border-brand" aria-hidden />
@@ -24,6 +24,7 @@ export function ProgramsSection() {
             <button
               key={program.slug}
               type="button"
+              data-el={`home.programs.card.${program.slug}`}
               onClick={() => setActiveSlug(program.slug)}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface text-left shadow-[var(--shadow-sm)] transition-[border-color,box-shadow,transform] hover:-translate-y-0.5 hover:border-brand hover:shadow-[var(--shadow-md)]"
             >
@@ -48,6 +49,7 @@ export function ProgramsSection() {
                 <div className="mt-auto flex flex-col gap-2 pt-2">
                   <Link
                     href="/#registro"
+                    data-el={`home.programs.card.${program.slug}.cta-registro`}
                     onClick={(e) => e.stopPropagation()}
                     className="inline-flex w-full items-center justify-center rounded-lg bg-brand px-4 py-2.5 text-[.8rem] font-bold uppercase tracking-wide text-on-brand transition-colors hover:bg-navy-2"
                   >
@@ -79,7 +81,7 @@ function ProgramModal({ program, onClose }: { program: Program | null; onClose: 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <Modal open={program !== null} onClose={onClose} labelledBy="program-modal-title">
+    <Modal open={program !== null} onClose={onClose} labelledBy="program-modal-title" dataEl={program ? `home.programs.modal.${program.slug}` : undefined}>
       {program && (
         <>
           <div className="relative h-[180px] w-full overflow-hidden sm:h-[220px]">
@@ -146,6 +148,7 @@ function ProgramModal({ program, onClose }: { program: Program | null; onClose: 
                     <div key={item.q} className="rounded-lg border border-border">
                       <button
                         type="button"
+                        data-el={`home.programs.modal.${program.slug}.faq.${i}`}
                         onClick={() => setOpenFaq(isOpen ? null : i)}
                         aria-expanded={isOpen}
                         className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-[.86rem] font-semibold text-ink"
@@ -172,6 +175,7 @@ function ProgramModal({ program, onClose }: { program: Program | null; onClose: 
 
             <Link
               href="/#registro"
+              data-el={`home.programs.modal.${program.slug}.cta-registro`}
               onClick={onClose}
               className="inline-flex w-full items-center justify-center rounded-lg bg-brand py-3.5 text-[.86rem] font-bold uppercase tracking-wide text-on-brand transition-colors hover:bg-navy-2"
             >

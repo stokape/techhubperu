@@ -3,6 +3,7 @@ import { Big_Shoulders, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site.config";
 import { GoogleAnalytics } from "@/components/layout/GoogleAnalytics";
+import { ElementTracker } from "@/components/layout/ElementTracker";
 import { StructuredData } from "@/components/layout/StructuredData";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Footer />
         <WhatsAppFloat />
         <GoogleAnalytics />
+        <ElementTracker />
       </body>
     </html>
   );

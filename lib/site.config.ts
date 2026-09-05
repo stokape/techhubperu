@@ -34,12 +34,14 @@ export const siteConfig = {
   // Web3Forms (envío de formularios sin backend propio) — web3forms.com
   web3formsAccessKey: "d46583ab-aa1f-4222-a3bd-fe93d02df029",
 
+  // slug: id estable para data-el (tagging/analítica) — no depende del label ni del href,
+  // así que un cambio de texto o de ancla no rompe las referencias existentes.
   nav: [
-    { label: "Inicio", href: "/" },
-    { label: "Nosotros", href: "/#nosotros" },
-    { label: "Programas", href: "/#programas" },
-    { label: "Empresas", href: "/empresas#registro-empresa" },
-    { label: "Contacto", href: "/#registro" },
+    { slug: "inicio", label: "Inicio", href: "/" },
+    { slug: "nosotros", label: "Nosotros", href: "/#nosotros" },
+    { slug: "programas", label: "Programas", href: "/#programas" },
+    { slug: "empresas", label: "Empresas", href: "/empresas#registro-empresa" },
+    { slug: "contacto", label: "Contacto", href: "/#registro" },
   ],
 
   legal: {

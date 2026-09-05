@@ -7,32 +7,32 @@ export function Footer() {
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-8 px-5 py-12 sm:px-8 sm:py-16 min-[561px]:grid-cols-2 min-[981px]:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div>
-          <Link href="/" aria-label="TechHub Perú — inicio" className="inline-block">
+          <Link data-el="footer.logo" href="/" aria-label="TechHub Perú — inicio" className="inline-block">
             <Image src="/images/logo/logo-light.png" alt="TechHub Perú" width={229} height={155} className="logo-light-only h-[62px] w-auto" />
             <Image src="/images/logo/logo-dark.png" alt="TechHub Perú" width={217} height={144} className="logo-dark-only h-[62px] w-auto" />
           </Link>
           <p className="my-3.5 max-w-[26ch] text-[.9rem] text-ink-muted">{siteConfig.claim}</p>
           <div className="flex gap-2.5">
-            <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
+            <a data-el="footer.social.instagram" href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-3.5 w-3.5">
                 <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
                 <circle cx="12" cy="12" r="3.8" />
                 <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
               </svg>
             </a>
-            <a href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
+            <a data-el="footer.social.tiktok" href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
                 <path d="M14 4v10.2a2.8 2.8 0 1 1-2-2.68" />
                 <path d="M14 4c.4 2.2 2 3.6 4 3.8" />
               </svg>
             </a>
-            <a href={`mailto:${siteConfig.contact.email}`} aria-label="Correo" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
+            <a data-el="footer.social.email" href={`mailto:${siteConfig.contact.email}`} aria-label="Correo" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <path d="M3.5 6.5 12 13l8.5-6.5" />
               </svg>
             </a>
-            <a href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
+            <a data-el="footer.social.whatsapp" href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
                 <path d="M7 17.5 4.5 20l1-3.4a8 8 0 1 1 2.9 2.6L7 17.5Z" />
               </svg>
@@ -41,28 +41,28 @@ export function Footer() {
         </div>
 
         <FooterCol title="TechHub">
-          <FooterLink href="/">Inicio</FooterLink>
-          <FooterLink href="/#nosotros">Nosotros</FooterLink>
-          <FooterLink href="/empresas#registro-empresa">Empresas</FooterLink>
-          <FooterLink href="/jobs">TechHub Jobs</FooterLink>
+          <FooterLink dataEl="footer.col.techhub.inicio" href="/">Inicio</FooterLink>
+          <FooterLink dataEl="footer.col.techhub.nosotros" href="/#nosotros">Nosotros</FooterLink>
+          <FooterLink dataEl="footer.col.techhub.empresas" href="/empresas#registro-empresa">Empresas</FooterLink>
+          <FooterLink dataEl="footer.col.techhub.jobs" href="/jobs">TechHub Jobs</FooterLink>
         </FooterCol>
 
         <FooterCol title="Programas">
           {programs.map((p) => (
-            <FooterLink key={p.slug} href="/#programas">{p.title}</FooterLink>
+            <FooterLink key={p.slug} dataEl={`footer.col.programas.${p.slug}`} href="/#programas">{p.title}</FooterLink>
           ))}
         </FooterCol>
 
         <FooterCol title="Empresas">
-          <FooterLink href="/empresas">Soluciones para su empresa</FooterLink>
-          <FooterLink href="/empresas#registro-empresa">Solicitar propuesta</FooterLink>
+          <FooterLink dataEl="footer.col.empresas.soluciones" href="/empresas">Soluciones para su empresa</FooterLink>
+          <FooterLink dataEl="footer.col.empresas.propuesta" href="/empresas#registro-empresa">Solicitar propuesta</FooterLink>
         </FooterCol>
 
         <FooterCol title="Contacto">
-          <a href={`mailto:${siteConfig.contact.email}`} className="text-[.87rem] text-ink-muted transition-colors hover:text-brand">
+          <a data-el="footer.contact.email" href={`mailto:${siteConfig.contact.email}`} className="text-[.87rem] text-ink-muted transition-colors hover:text-brand">
             {siteConfig.contact.email}
           </a>
-          <a href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-[.87rem] text-ink-muted transition-colors hover:text-brand">
+          <a data-el="footer.contact.whatsapp" href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-[.87rem] text-ink-muted transition-colors hover:text-brand">
             {siteConfig.contact.whatsappDisplay}
           </a>
           {siteConfig.contact.address && (
@@ -87,9 +87,9 @@ function FooterCol({ title, children }: { title: string; children: React.ReactNo
   );
 }
 
-function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+function FooterLink({ href, dataEl, children }: { href: string; dataEl: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="text-[.87rem] text-ink-muted transition-colors hover:text-brand">
+    <Link data-el={dataEl} href={href} className="text-[.87rem] text-ink-muted transition-colors hover:text-brand">
       {children}
     </Link>
   );

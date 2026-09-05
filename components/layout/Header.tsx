@@ -26,14 +26,14 @@ export function Header() {
       <div className="border-b border-border bg-surface-2">
         <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 py-[7px] sm:px-8">
           <div className="flex gap-3.5">
-            <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink-faint transition-colors hover:text-brand">
+            <a data-el="header.topbar.instagram" href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink-faint transition-colors hover:text-brand">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-3.5 w-3.5">
                 <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
                 <circle cx="12" cy="12" r="3.8" />
                 <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
               </svg>
             </a>
-            <a href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-ink-faint transition-colors hover:text-brand">
+            <a data-el="header.topbar.tiktok" href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-ink-faint transition-colors hover:text-brand">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
                 <path d="M14 4v10.2a2.8 2.8 0 1 1-2-2.68" />
                 <path d="M14 4c.4 2.2 2 3.6 4 3.8" />
@@ -41,9 +41,9 @@ export function Header() {
             </a>
           </div>
           <div className="hidden gap-5 text-[.76rem] text-ink-faint sm:flex">
-            <Link href="/empresas#registro-empresa" className="hover:text-ink">Empresas</Link>
-            <Link href="/jobs" className="hover:text-ink">TechHub Jobs</Link>
-            <a href={siteConfig.lms.url} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
+            <Link data-el="header.topbar.empresas" href="/empresas#registro-empresa" className="hover:text-ink">Empresas</Link>
+            <Link data-el="header.topbar.jobs" href="/jobs" className="hover:text-ink">TechHub Jobs</Link>
+            <a data-el="header.topbar.aula-virtual" href={siteConfig.lms.url} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
               {siteConfig.lms.label}
             </a>
           </div>
@@ -56,7 +56,7 @@ export function Header() {
         }`}
       >
         <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-5 px-5 sm:px-8">
-          <Link href="/" aria-label="TechHub Perú — inicio" className="flex items-center gap-3">
+          <Link data-el="header.logo" href="/" aria-label="TechHub Perú — inicio" className="flex items-center gap-3">
             <Image
               src="/images/logo/logo-light.png"
               alt="TechHub Perú"
@@ -79,6 +79,7 @@ export function Header() {
             {siteConfig.nav.map((item) => (
               <Link
                 key={item.href}
+                data-el={`header.nav.${item.slug}`}
                 href={item.href}
                 className="text-[.86rem] font-semibold text-ink-muted transition-colors hover:text-brand"
               >
@@ -90,6 +91,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <a
+              data-el="header.cta.aula-virtual"
               href={siteConfig.lms.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -98,12 +100,14 @@ export function Header() {
               {siteConfig.lms.label}
             </a>
             <Link
+              data-el="header.cta.inscribete"
               href="/#registro"
               className="inline-flex h-[41px] items-center justify-center rounded-lg bg-brand px-[18px] text-[.86rem] font-bold uppercase tracking-wide text-on-brand transition-colors hover:bg-navy-2"
             >
               Inscríbete
             </Link>
             <button
+              data-el="header.menu-toggle"
               onClick={() => setMobileOpen(true)}
               aria-label="Abrir menú"
               aria-expanded={mobileOpen}
