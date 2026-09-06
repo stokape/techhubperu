@@ -46,8 +46,8 @@ const hotspots: Hotspot[] = [
   {
     id: "certificacion",
     layer: "certificacion",
-    x: 44,
-    y: 38,
+    x: 54,
+    y: 34,
     coord: "N.04 / QR",
     title: "Certificación digital",
     description: "Al aprobar, recibes una constancia verificable con un solo escaneo QR.",
@@ -60,7 +60,7 @@ const layers: { id: Layer; label: string }[] = [
   { id: "certificacion", label: "Certificación" },
 ];
 
-export function HeroInteractive() {
+export function HeroInteractive({ children }: { children?: React.ReactNode }) {
   const [activeLayer, setActiveLayer] = useState<Layer | null>(null);
   const [openId, setOpenId] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -103,25 +103,38 @@ export function HeroInteractive() {
       ref={containerRef}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-[16/9]"
+      className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-[21/9]"
     >
-      <div
-        ref={imgWrapRef}
-        className="absolute inset-[-12px] transition-transform duration-300 ease-out will-change-transform"
-      >
-        <Image
-          src="/images/hero/hero-tecnico.jpg"
-          alt="Técnico de telecomunicaciones asegurado con arnés, escalando una torre sobre el skyline de la ciudad"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[78%_32%]"
-        />
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="hero-kenburns absolute inset-[-14px]">
+          <div
+            ref={imgWrapRef}
+            className="absolute inset-[-12px] transition-transform duration-300 ease-out will-change-transform"
+          >
+            <Image
+              src="/images/hero/hero-tecnico.jpg"
+              alt="Técnico de telecomunicaciones asegurado con arnés, escalando una torre sobre el skyline de la ciudad"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[78%_32%]"
+            />
+          </div>
+        </div>
       </div>
       <div
         className="absolute inset-0 bg-[linear-gradient(0deg,rgba(10,20,68,.92)_0%,rgba(10,20,68,.55)_38%,rgba(10,20,68,.15)_65%)] sm:bg-[linear-gradient(90deg,rgba(10,20,68,.92)_0%,rgba(10,20,68,.5)_42%,rgba(10,20,68,.08)_72%)]"
         aria-hidden
       />
+
+      {/* Hasta "lg" el texto vive aparte, debajo de la foto (ver Hero.tsx) —
+          con 4 puntos repartidos en toda la altura no hay ancho suficiente
+          para superponer texto sin taparlos antes de ese punto. */}
+      {children && (
+        <div className="absolute inset-0 z-[1] hidden items-center lg:flex">
+          <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8">{children}</div>
+        </div>
+      )}
 
       {hotspots.map((h) => {
           const dimmed = activeLayer !== null && activeLayer !== h.layer;
