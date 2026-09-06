@@ -10,6 +10,15 @@ const actionTitles: Record<string, string> = {
   "programa-tecnico-experto-in-house": "Especialízate en In House",
 };
 
+// Fotos propias de esta sección (no las del catálogo de programas) — elegidas
+// para representar cada ruta: A) técnico trabajando solo, B) mentor guiando a
+// una técnica, C) instructor con el equipo completo.
+const orientadorPhotos: Record<string, string> = {
+  "programa-tecnico-inicial": "/images/orientador/inicia-tu-carrera.jpg",
+  "programa-actualizacion-certificacion": "/images/orientador/actualizate-y-certificate.jpg",
+  "programa-tecnico-experto-in-house": "/images/orientador/especializate-in-house.jpg",
+};
+
 export function ProgramOrientador() {
   const [progA, progB, progC] = programs;
 
@@ -75,7 +84,7 @@ function PhotoTile({ program, className = "" }: { program: (typeof programs)[num
       className={`relative block h-[200px] overflow-hidden rounded-xl md:h-full ${className}`}
     >
       <Image
-        src={program.image.thumb}
+        src={orientadorPhotos[program.slug]}
         alt={program.title}
         fill
         loading="lazy"
@@ -104,12 +113,12 @@ function FeaturedCard({
       className={`group relative flex min-h-[260px] flex-col justify-end overflow-hidden rounded-xl p-6 text-white sm:p-7 ${className}`}
     >
       <Image
-        src={program.image.stage}
+        src={orientadorPhotos[program.slug]}
         alt={program.title}
         fill
         loading="lazy"
         sizes="(max-width: 767px) 100vw, 33vw"
-        className="object-cover transition-transform duration-300 group-hover:scale-105"
+        className="object-cover object-[center_25%] transition-transform duration-300 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,20,41,.92)_0%,rgba(8,20,41,.55)_55%,rgba(8,20,41,.2)_100%)]" />
       <div className="relative">
