@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { features } from "@/lib/site.config";
+import { FlipPhoto } from "@/components/ui/FlipPhoto";
 
 export function MethodologyEditorial() {
   return (
@@ -32,20 +32,13 @@ export function MethodologyEditorial() {
                   <h3 className="mb-2 text-[1.15rem] font-bold uppercase leading-tight text-ink">{f.title}</h3>
                   <p className="max-w-[48ch] text-[.92rem] leading-relaxed text-ink-muted">{f.description}</p>
                 </div>
-                <div
-                  className={`relative aspect-[4/3] w-full overflow-hidden rounded-lg sm:aspect-[3/2] sm:w-[260px] ${
-                    reversed ? "sm:order-1" : "sm:order-3"
-                  }`}
-                >
-                  <Image
-                    src={f.image}
-                    alt=""
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 640px) 100vw, 260px"
-                    className="object-cover"
-                  />
-                </div>
+                <FlipPhoto
+                  image={f.image}
+                  alt={f.title}
+                  back={f.detail}
+                  dataEl={`home.methodology.item.${f.slug}.photo`}
+                  className={`aspect-[4/3] sm:aspect-[3/2] sm:w-[260px] ${reversed ? "sm:order-1" : "sm:order-3"}`}
+                />
               </article>
             );
           })}

@@ -222,6 +222,9 @@ export type Feature = {
   slug: string;
   title: string;
   description: string;
+  // Texto que aparece al voltear la foto (ver FlipPhoto) — un detalle
+  // adicional, no una repetición de `description`.
+  detail: string;
   image: string;
 };
 
@@ -231,35 +234,41 @@ export const features: Feature[] = [
     slug: "presencial",
     title: "Formación 100% presencial",
     description: "Sin clases virtuales: cada sesión ocurre en campo o en laboratorio, con equipos reales.",
+    detail: "Mismo horario y lugar cada semana, sin depender de conexión a internet ni clases grabadas.",
     image: "/images/features/presencial.jpg",
   },
   {
     slug: "instructores",
     title: "Instructores con experiencia real",
     description: "Profesionales activos en la industria de telecomunicaciones, no solo en el aula.",
+    detail: "Técnicos que hoy resuelven instalaciones reales fuera del aula, no solo enseñan teoría.",
     image: "/images/features/instructores.jpg",
   },
   {
     slug: "laboratorio",
     title: "Laboratorios teórico-prácticos",
     description: "Equipos reales de fibra, HFC y redes para practicar antes de salir a campo.",
+    detail: "Fibra óptica, HFC, Wi-Fi y redes domésticas: los mismos equipos que verás en los programas.",
     image: "/images/features/laboratorio.jpg",
   },
   {
     slug: "certificacion",
     title: "Certificación digital con QR",
     description: "Constancia verificable en línea con un solo escaneo, sin trámites adicionales.",
+    detail: "El QR enlaza directo a tu constancia verificada — cualquier empresa puede confirmarla al instante.",
     image: "/images/features/certificacion.jpg",
   },
   {
     slug: "bolsa",
     title: "Bolsa laboral especializada",
     description: "Acceso a vacantes técnicas evaluadas y filtradas por TechHub.",
+    detail: "Tu perfil evaluado se conecta con empresas del sector a través de TechHub Jobs.",
     image: "/images/features/bolsa.jpg",
   },
   {
     slug: "incompany",
     title: "Programas in company",
+    detail: "Ideal para operadores y contratistas que necesitan estandarizar competencias de sus propios equipos.",
     description: "Capacitación llevada directamente a las instalaciones de tu empresa.",
     image: "/images/features/incompany.jpg",
   },

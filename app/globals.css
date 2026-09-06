@@ -212,6 +212,16 @@ h1, h2, h3, h4 {
   }
 }
 
+/* FlipPhoto — backface-visibility necesita el prefijo -webkit- para Safari,
+   que Tailwind no genera con una utilidad arbitraria. */
+.flip-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-face-back {
+  transform: rotateY(180deg);
+}
+
 @keyframes hero-kenburns {
   0% {
     transform: scale(1) translate(0, 0);
