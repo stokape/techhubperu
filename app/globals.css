@@ -6,7 +6,8 @@
    ============================================================ */
 
 :root {
-  --bg: #ffffff;
+  /* "paper" — gris-técnico frío en vez de blanco puro, evoca papel de plano */
+  --bg: #f7f8fa;
   --bg-soft: #eaf6ff;
   --surface: #ffffff;
   --surface-2: #eef2f9;
@@ -15,6 +16,8 @@
   --ink: #0a1444;
   --ink-muted: #4b5875;
   --ink-faint: #8794ac;
+  /* "steel" — gris con temperatura técnica, para etiquetas y divisores */
+  --steel: #6b7686;
 
   --border: rgba(10, 20, 68, 0.12);
   --border-strong: rgba(10, 20, 68, 0.22);
@@ -25,6 +28,8 @@
 
   --navy: #0a1444;
   --navy-2: #0d3b8e;
+  /* "graphite" — contraste oscuro deliberadamente distinto del navy de marca */
+  --graphite: #1c2333;
   --accent-2: #00a9cc;
   --good: #1c9a5b;
 
@@ -44,6 +49,7 @@
     --ink: #eaf3ff;
     --ink-muted: #a9b9e0;
     --ink-faint: #7280ae;
+    --steel: #8592a8;
 
     --border: rgba(160, 190, 255, 0.15);
     --border-strong: rgba(160, 190, 255, 0.28);
@@ -54,6 +60,7 @@
 
     --navy: #0a1444;
     --navy-2: #0d3b8e;
+    --graphite: #1c2333;
     --accent-2: #00c6ff;
     --good: #3fcb88;
 
@@ -73,6 +80,7 @@
   --ink: #eaf3ff;
   --ink-muted: #a9b9e0;
   --ink-faint: #7280ae;
+  --steel: #8592a8;
 
   --border: rgba(160, 190, 255, 0.15);
   --border-strong: rgba(160, 190, 255, 0.28);
@@ -83,6 +91,7 @@
 
   --navy: #0a1444;
   --navy-2: #0d3b8e;
+  --graphite: #1c2333;
   --accent-2: #00c6ff;
   --good: #3fcb88;
 
@@ -111,7 +120,9 @@
 
   --color-navy: var(--navy);
   --color-navy-2: var(--navy-2);
+  --color-graphite: var(--graphite);
   --color-accent-2: var(--accent-2);
+  --color-steel: var(--steel);
   --color-good: var(--good);
 
   --font-display: var(--font-big-shoulders), "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
@@ -166,6 +177,39 @@ h1, h2, h3, h4 {
 }
 :root[data-theme="dark"] .logo-dark-only {
   display: block;
+}
+
+/* ============================================================
+   Motivo "manual técnico de campo" — divisores con marcas de
+   medición y etiquetas tipo coordenada, usados entre secciones.
+   ============================================================ */
+.tech-label {
+  font-family: var(--font-mono-th);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+
+.tech-divider {
+  position: relative;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border-strong) 0,
+    var(--border-strong) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @keyframes modal-in {
