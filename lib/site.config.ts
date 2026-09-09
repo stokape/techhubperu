@@ -286,11 +286,13 @@ export const empresaSolutions = [
   { title: "Consultoría y acompañamiento", description: "Mejora de procesos y estándares de campo." },
 ] as const;
 
-export const empresaStats = [
-  { value: "30%", label: "Reducción de costos de capacitación" },
-  { value: "25%", label: "Aumento de productividad" },
-  { value: "35%", label: "Mejora en calidad de instalación" },
-  { value: "40%", label: "Mayor satisfacción del cliente" },
+export const empresaBenefits = [
+  "Procesos técnicos estandarizados en todo tu equipo, sin importar el sitio o el turno.",
+  "Técnicos que diagnostican con precisión, no por ensayo y error.",
+  "Menos errores en campo y menos visitas repetidas para corregir lo mismo.",
+  "El mismo estándar de calidad en cada instalación, la haga quien la haga.",
+  "Competencias medibles y certificadas por técnico, no solo años de experiencia.",
+  "Información concreta sobre el nivel de tu equipo, para decidir con criterio.",
 ] as const;
 
 export const jobsStats = [

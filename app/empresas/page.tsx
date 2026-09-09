@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { empresaSolutions, empresaStats } from "@/lib/site.config";
+import { empresaBenefits, empresaSolutions } from "@/lib/site.config";
 import { Button } from "@/components/ui/Button";
 import { EmpresaForm } from "@/components/sections/EmpresaForm";
 
@@ -39,14 +39,24 @@ export default function EmpresasPage() {
         </div>
       </section>
 
-      <section data-el="empresas.stats.section" className="bg-navy text-white">
-        <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-5 px-5 py-[clamp(60px,8vw,112px)] text-center sm:px-8 min-[701px]:grid-cols-4">
-          {empresaStats.map((s, i) => (
-            <div key={s.label} data-el={`empresas.stats.stat.${i}`}>
-              <div className="font-display text-[clamp(2rem,1.5rem+1.6vw,2.9rem)] font-black text-white">{s.value}</div>
-              <div className="mt-2 font-mono-th text-[.7rem] uppercase tracking-[.05em] text-white/72">{s.label}</div>
-            </div>
-          ))}
+      <section data-el="empresas.benefits.section" className="bg-navy text-white">
+        <div className="mx-auto max-w-[1280px] px-5 py-[clamp(60px,8vw,112px)] sm:px-8">
+          <div className="mx-auto mb-[clamp(30px,5vw,48px)] max-w-[620px] text-center">
+            <span className="font-mono-th text-[.72rem] font-medium uppercase tracking-[.14em] text-accent-2">
+              Por qué capacitar con TechHub
+            </span>
+            <h2 className="mt-3 text-white">Lo que gana tu operación</h2>
+          </div>
+          <ul className="mx-auto grid max-w-[920px] grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
+            {empresaBenefits.map((benefit, i) => (
+              <li key={benefit} data-el={`empresas.benefits.item.${i}`} className="flex items-start gap-3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 h-[18px] w-[18px] flex-none text-accent-2">
+                  <path d="M4 12l5 5L20 6" />
+                </svg>
+                <span className="text-[.94rem] leading-relaxed text-white/86">{benefit}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

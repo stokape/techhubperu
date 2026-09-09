@@ -123,8 +123,8 @@ Slugs de programa actuales: `programa-tecnico-inicial`,
 | data-el | Elemento |
 |---|---|
 | `empresas.hero.cta.propuesta` | Botón del hero "Solicitar propuesta" |
-| `empresas.stats.section` | Sección de cifras |
-| `empresas.stats.stat.${i}` | Cada cifra (`i` = índice, 0-3) |
+| `empresas.benefits.section` | Sección "Lo que gana tu operación" (lista de beneficios) |
+| `empresas.benefits.item.${i}` | Cada beneficio (`i` = índice, 0-5) |
 | `empresas.solutions.section` | Sección "Soluciones para su empresa" |
 | `empresas.solutions.card.${i}` | Cada tarjeta de solución (`i` = índice, 0-5) |
 | `empresas.form.section` | Sección del formulario (`#registro-empresa`) |
