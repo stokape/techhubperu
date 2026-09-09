@@ -33,7 +33,7 @@ lleva tag porque no es un punto de automatización útil.
 | `header.cta.inscribete` | Botón "Inscríbete" |
 | `header.menu-toggle` | Botón hamburguesa (abre `MobileNav`) |
 | `header.theme-toggle` | Botón de tema claro/oscuro (`ThemeToggle.tsx`) |
-| `header.topbar.instagram` / `.tiktok` | Íconos de redes en la barra superior |
+| `header.topbar.instagram` / `.tiktok` | Íconos de redes en la barra superior (ocultos mientras `siteConfig.social.instagram`/`.tiktok` sean `null`) |
 | `header.topbar.empresas` / `.jobs` / `.aula-virtual` | Accesos rápidos de la barra superior |
 
 ## Menú móvil (`components/layout/MobileNav.tsx`)
@@ -51,7 +51,7 @@ lleva tag porque no es un punto de automatización útil.
 | data-el | Elemento |
 |---|---|
 | `footer.logo` | Logo, link a inicio |
-| `footer.social.instagram` / `.tiktok` / `.email` / `.whatsapp` | Íconos de redes del bloque de marca |
+| `footer.social.instagram` / `.tiktok` / `.email` / `.whatsapp` | Íconos de redes del bloque de marca (instagram/tiktok ocultos mientras estén en `null` en `site.config.ts`) |
 | `footer.col.techhub.inicio` / `.nosotros` / `.empresas` / `.jobs` | Columna "TechHub" |
 | `footer.col.programas.${slug}` | Columna "Programas" (uno por programa, ver tabla de programas abajo) |
 | `footer.col.empresas.soluciones` / `.propuesta` | Columna "Empresas" |

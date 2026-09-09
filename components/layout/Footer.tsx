@@ -13,19 +13,23 @@ export function Footer() {
           </Link>
           <p className="my-3.5 max-w-[26ch] text-[.9rem] text-ink-muted">{siteConfig.claim}</p>
           <div className="flex gap-2.5">
-            <a data-el="footer.social.instagram" href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-3.5 w-3.5">
-                <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
-                <circle cx="12" cy="12" r="3.8" />
-                <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
-            <a data-el="footer.social.tiktok" href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
-                <path d="M14 4v10.2a2.8 2.8 0 1 1-2-2.68" />
-                <path d="M14 4c.4 2.2 2 3.6 4 3.8" />
-              </svg>
-            </a>
+            {siteConfig.social.instagram && (
+              <a data-el="footer.social.instagram" href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-3.5 w-3.5">
+                  <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+                  <circle cx="12" cy="12" r="3.8" />
+                  <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+            )}
+            {siteConfig.social.tiktok && (
+              <a data-el="footer.social.tiktok" href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
+                  <path d="M14 4v10.2a2.8 2.8 0 1 1-2-2.68" />
+                  <path d="M14 4c.4 2.2 2 3.6 4 3.8" />
+                </svg>
+              </a>
+            )}
             <a data-el="footer.social.email" href={`mailto:${siteConfig.contact.email}`} aria-label="Correo" className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-strong text-ink-muted transition-colors hover:border-brand hover:text-brand">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
                 <rect x="3" y="5" width="18" height="14" rx="2" />

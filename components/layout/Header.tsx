@@ -10,6 +10,7 @@ import { MobileNav } from "./MobileNav";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const hasSocial = Boolean(siteConfig.social.instagram || siteConfig.social.tiktok);
 
   useEffect(() => {
     function onScroll() {
@@ -22,23 +23,30 @@ export function Header() {
 
   return (
     <>
-      {/* Barra superior: redes sociales + accesos rápidos */}
-      <div className="border-b border-border bg-surface-2">
+      {/* Barra superior: redes sociales + accesos rápidos.
+          Sin redes activas, la barra se oculta en mobile (ahí solo vivían
+          los íconos) pero se mantiene desde "sm" porque siempre hay accesos
+          rápidos que mostrar. */}
+      <div className={`border-b border-border bg-surface-2 ${hasSocial ? "" : "hidden sm:block"}`}>
         <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 py-[7px] sm:px-8">
           <div className="flex gap-3.5">
-            <a data-el="header.topbar.instagram" href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink-faint transition-colors hover:text-brand">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-3.5 w-3.5">
-                <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
-                <circle cx="12" cy="12" r="3.8" />
-                <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
-            <a data-el="header.topbar.tiktok" href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-ink-faint transition-colors hover:text-brand">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
-                <path d="M14 4v10.2a2.8 2.8 0 1 1-2-2.68" />
-                <path d="M14 4c.4 2.2 2 3.6 4 3.8" />
-              </svg>
-            </a>
+            {siteConfig.social.instagram && (
+              <a data-el="header.topbar.instagram" href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink-faint transition-colors hover:text-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-3.5 w-3.5">
+                  <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+                  <circle cx="12" cy="12" r="3.8" />
+                  <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+            )}
+            {siteConfig.social.tiktok && (
+              <a data-el="header.topbar.tiktok" href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-ink-faint transition-colors hover:text-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
+                  <path d="M14 4v10.2a2.8 2.8 0 1 1-2-2.68" />
+                  <path d="M14 4c.4 2.2 2 3.6 4 3.8" />
+                </svg>
+              </a>
+            )}
           </div>
           <div className="hidden gap-5 text-[.76rem] text-ink-faint sm:flex">
             <Link data-el="header.topbar.empresas" href="/empresas#registro-empresa" className="hover:text-ink">Empresas</Link>

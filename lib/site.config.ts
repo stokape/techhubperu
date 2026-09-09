@@ -18,8 +18,11 @@ export const siteConfig = {
   },
 
   social: {
-    instagram: "https://instagram.com/techhubpe",
-    tiktok: "https://www.tiktok.com/@techhubperu",
+    // Ocultos a pedido — URL real conservada acá para reactivar en un
+    // segundo cuando se quieran mostrar de nuevo (null = oculto en todo
+    // el sitio: topbar, footer y datos estructurados).
+    instagram: null as string | null, // "https://instagram.com/techhubpe"
+    tiktok: null as string | null, // "https://www.tiktok.com/@techhubperu"
     // TODO: agregar si existen — no inventar URLs.
     linkedin: null as string | null,
     facebook: null as string | null,
