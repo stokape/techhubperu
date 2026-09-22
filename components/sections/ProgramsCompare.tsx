@@ -40,9 +40,6 @@ export function ProgramsCompare() {
               <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,20,41,.88)_0%,rgba(8,20,41,.25)_55%,transparent_100%)]" />
               <span className="tech-label absolute left-4 top-4 !text-white/80">MOD.01 · PUNTO DE ENTRADA</span>
               <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7">
-                <span className="mb-2 inline-block rounded-full border border-accent-2 px-3 py-1 font-mono-th text-[.66rem] uppercase tracking-[.05em] text-accent-2">
-                  {featured.duration ?? "Duración a confirmar"}
-                </span>
                 <h3 className="text-[clamp(1.3rem,1.05rem+1vw,1.7rem)] uppercase leading-[1.1]">{featured.title}</h3>
               </div>
             </div>
@@ -66,9 +63,8 @@ export function ProgramsCompare() {
 
           {/* Los otros dos — tabla comparativa tipo ficha técnica */}
           <div className="flex flex-col overflow-hidden rounded-xl border border-border bg-surface">
-            <div className="tech-label grid grid-cols-[1fr_auto] gap-3 border-b border-border bg-surface-2 px-5 py-3">
+            <div className="tech-label border-b border-border bg-surface-2 px-5 py-3">
               <span>Comparar programas</span>
-              <span>Duración / Perfil</span>
             </div>
             {rest.map((p) => (
               <button
@@ -88,8 +84,7 @@ export function ProgramsCompare() {
                   <p className="truncate text-[.8rem] text-ink-muted">{p.subtitle}</p>
                 </div>
                 <div className="flex-none text-right">
-                  <span className="tech-label block !text-ink">{p.duration ?? "Por confirmar"}</span>
-                  <span className="mt-1 inline-flex items-center gap-1 text-[.76rem] font-bold uppercase text-brand">
+                  <span className="inline-flex items-center gap-1 text-[.76rem] font-bold uppercase text-brand">
                     Ver
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3 transition-transform group-hover:translate-x-0.5">
                       <path d="M9 6l6 6-6 6" />
@@ -100,8 +95,8 @@ export function ProgramsCompare() {
             ))}
             <div className="mt-auto border-t border-border p-5">
               <p className="text-[.8rem] text-ink-muted">
-                Los 3 programas son <strong className="text-ink">100% presenciales</strong>. La duración y el
-                contenido están confirmados por TechHub Perú.
+                Los 3 programas son <strong className="text-ink">100% presenciales</strong>. El contenido está
+                confirmado por TechHub Perú.
               </p>
             </div>
           </div>
@@ -124,9 +119,6 @@ function ProgramModal({ program, onClose }: { program: Program | null; onClose: 
             <Image src={program.image.stage} alt={program.title} fill sizes="720px" className="object-cover" />
             <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,20,41,.94)_0%,rgba(8,20,41,.55)_55%,rgba(8,20,41,.15)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7">
-              <span className="mb-2 inline-block rounded-full border border-brand bg-brand px-3 py-1.5 font-mono-th text-[.66rem] uppercase tracking-[.05em]">
-                {program.duration ?? "Duración a confirmar"}
-              </span>
               <h3 id="program-modal-title" className="text-[clamp(1.3rem,1.05rem+1vw,1.7rem)] uppercase leading-[1.1]">
                 {program.title}
               </h3>

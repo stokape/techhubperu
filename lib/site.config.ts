@@ -120,7 +120,7 @@ export const programs: Program[] = [
     },
     faq: [
       { q: "¿Para quién está pensado este programa?", a: "Para personas que desean iniciar su formación en telecomunicaciones y para quienes cuentan con experiencia inicial y buscan reforzar sus bases técnicas." },
-      { q: "¿Cuánto dura?", a: "El programa tiene una duración total de 80 horas." },
+      { q: "¿Cuánto dura?", a: "La duración se confirma al momento de la inscripción, según el cronograma vigente." },
       { q: "¿Qué tecnologías se estudian?", a: "El contenido incluye Wi-Fi, fibra óptica, HFC, redes domésticas y redes de datos. También contempla seguridad para trabajos en altura." },
       { q: "¿Incluye actividades prácticas?", a: "Sí. La malla contempla formación teórica y práctica para desarrollar habilidades relacionadas con instalaciones, configuración y diagnóstico." },
       { q: "¿Cómo se obtiene el certificado?", a: "Debes aprobar el programa para recibir el certificado del Programa Técnico Inicial, emitido por TECH HUB PERÚ." },
@@ -163,7 +163,7 @@ export const programs: Program[] = [
     },
     faq: [
       { q: "¿Para quién está pensado este programa?", a: "Para personas con conocimientos o experiencia previa en telecomunicaciones que buscan actualizarse y fortalecer su desempeño técnico." },
-      { q: "¿Cuánto dura?", a: "El programa tiene una duración total de 40 horas." },
+      { q: "¿Cuánto dura?", a: "La duración se confirma al momento de la inscripción, según el cronograma vigente." },
       { q: "¿Necesito conocimientos previos?", a: "Sí. Está orientado a participantes que ya cuentan con una base técnica. Consulta los requisitos de ingreso para verificar si corresponde a tu preparación." },
       { q: "¿Qué tecnologías se estudian?", a: "El contenido incluye Wi-Fi, fibra óptica, HFC, redes domésticas y redes de datos. También contempla seguridad para trabajos en altura." },
       { q: "¿Incluye actividades prácticas?", a: "Sí. La formación contempla actividades prácticas y resolución de casos para aplicar los conocimientos técnicos." },

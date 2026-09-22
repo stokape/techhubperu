@@ -92,7 +92,6 @@ function PhotoTile({ program, className = "" }: { program: (typeof programs)[num
         className="object-cover transition-transform duration-300 hover:scale-105"
       />
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,20,41,.75)_0%,transparent_55%)]" />
-      <span className="tech-label absolute bottom-3 left-3.5 !text-white/85">{program.duration ?? "—"}</span>
     </Link>
   );
 }
