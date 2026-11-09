@@ -31,7 +31,7 @@ export const siteConfig = {
 
   lms: {
     label: "Aula Virtual",
-    url: "https://techhub.lms.stoka.pe/",
+    url: "https://aula.techhub.pe/",
   },
 
   // Web3Forms (envío de formularios sin backend propio) — web3forms.com
